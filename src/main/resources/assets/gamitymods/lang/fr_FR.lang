@@ -1,0 +1,19 @@
+// Fichier de langue en français pour Hammerz
+
+// Blocs
+tile.BlockStorageVoid.name=Bloc du Vide
+
+// Objets
+item.GamityHammer.name=Marteau Gamity
+item.PlatiumHammer.name=Marteau de Platine
+item.AluminiumHammer.name=Marteau en Aluminium
+item.ChromiumHammer.name=Marteau en Chrome
+item.CopperHammer.name=Marteau en Cuivre
+
+// Phrases
+gamitymods.keyword.durability=Durabilité
+gamitymods.keyword.phase=Phase
+
+phrase.gamitymods.hammerinfo1=Mine en 3x3 (sauf si vous êtes accroupi)
+phrase.gamitymods.hammerinfo2=Place des torches de l'inventaire avec un clic droit
+phrase.gamitymods.holdshift=<maintenir Shift>

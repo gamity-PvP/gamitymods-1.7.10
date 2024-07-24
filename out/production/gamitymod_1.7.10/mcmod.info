@@ -1,0 +1,22 @@
+[
+{
+  "modid": "gamitymods",
+  "name": "gamity mods",
+  "description": "mods de gamity-pvp",
+  "version": "1.7.10-10.13.4.1614",
+  "mcversion": "1.7.10",
+  "url": "",
+  "updateUrl": "",
+  "authors": [
+    "thomas260913",
+    "gabi_86"
+  ],
+  "credits": "thomas260913, gabi_86",
+  "logoFile": "",
+  "screenshots": [
+  ],
+  "parent":"",
+  "dependencies": [
+  ]
+}
+]

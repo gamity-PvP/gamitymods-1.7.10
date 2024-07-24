@@ -1,0 +1,19 @@
+// English language file for Hammerz
+
+// Blocks
+tile.BlockStorageVoid.name=Void Block
+
+// Items
+item.GamityHammer.name=Gamity Hammer
+item.PlatiumHammer.name=Platium Hammer
+item.AluminiumHammer.name=Aluminium Hammer
+item.ChromiumHammer.name=Chromium Hammer
+item.CopperHammer.name=Copper Hammer
+
+// Phrases
+gamitymods.keyword.durability=Durability
+gamitymods.keyword.phase=Phase
+
+phrase.gamitymods.hammerinfo1=Mines in 3x3 (unless you are sneaking)
+phrase.gamitymods.hammerinfo2=Places torches from inventory with right-click
+phrase.gamitymods.holdshift=<hold Shift>
