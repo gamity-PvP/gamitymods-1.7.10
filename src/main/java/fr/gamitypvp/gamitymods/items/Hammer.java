@@ -18,12 +18,9 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.oredict.OreDictionary;
 
-import org.apache.logging.log4j.Level;
 import org.lwjgl.input.Keyboard;
 
-import fr.gamitypvp.gamitymods.gamitymods;
 import fr.gamitypvp.gamitymods.Reference;
-import fr.gamitypvp.gamitymods.config.ConfigOptions;
 import fr.gamitypvp.gamitymods.utils.RandomUtils;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -32,27 +29,12 @@ public class Hammer extends ItemPickaxe
 {
 	public String name;
 
-	public Hammer(ToolMaterial material, String Name)
+	public Hammer(ToolMaterial material, String Name, CreativeTabs creativeTabs, String texture)
 	{
 		super(material);
-		this.setUnlocalizedName(Name + "Hammer");
-		this.setCreativeTab(gamitymods.GamityHammerTab);
-		if (Objects.equals(Name, "Aluminium")) {
-			this.setMaxDamage(3000);
-			this.setHarvestLevel("pickaxe", 3);
-		} else if (Objects.equals(Name, "Copper")) {
-			this.setMaxDamage(5000);
-			this.setHarvestLevel("pickaxe", 3);
-		} else if (Objects.equals(Name, "Chromium")) {
-			this.setMaxDamage(10000);
-			this.setHarvestLevel("pickaxe", 3);
-		} else if (Objects.equals(Name, "Gamity")) {
-			this.setMaxDamage(12000);
-			this.setHarvestLevel("pickaxe", 3);
-		} else if (Objects.equals(Name, "Platium")) {
-			this.setMaxDamage(20000);
-			this.setHarvestLevel("pickaxe", 3);
-		}
+		setUnlocalizedName(Name);
+		setTextureName(texture);
+		setCreativeTab(creativeTabs);
 		name = Name;
 	}
 
@@ -81,11 +63,7 @@ public class Hammer extends ItemPickaxe
 	public void addStandardInfo(ItemStack stack, EntityPlayer player, List list, boolean useExtraInformation)
 	{
 		list.add(EnumChatFormatting.WHITE + "" + EnumChatFormatting.ITALIC + StatCollector.translateToLocal("phrase.gamitymods.holdshift"));
-		if (ConfigOptions.AddDurabilityInfo)
-		{
-			list.add(EnumChatFormatting.GRAY + StatCollector.translateToLocal("gamitymods.keyword.durability") + ": "
-					+ (stack.getMaxDamage() - stack.getItemDamage()) + "/" + stack.getMaxDamage());
-		}
+		list.add(EnumChatFormatting.GRAY + StatCollector.translateToLocal("gamitymods.keyword.durability") + ": " + (stack.getMaxDamage() - stack.getItemDamage()) + "/" + stack.getMaxDamage());
 	}
 
 	public void addExpandedInfo(ItemStack stack, EntityPlayer player, List list, boolean useExtraInformation)
@@ -188,14 +166,6 @@ public class Hammer extends ItemPickaxe
 		}
 	}
 
-	public void log(World world, Object object)
-	{
-		if (world.isRemote)
-		{
-			gamitymods.log.log(Level.INFO, object);
-		}
-	}
-
 	public boolean requestDamage(Block breakBlock, ItemStack stack, EntityPlayer player, int damage)
 	{
 		if ((stack.getMaxDamage() - stack.getItemDamage()) < damage)
@@ -215,11 +185,6 @@ public class Hammer extends ItemPickaxe
 		return requestDamage(breakBlock, stack, player, 1);
 	}
 
-	@Override
-	public float getDigSpeed(ItemStack stack, Block block, int meta)
-	{
-		return super.getDigSpeed(stack, block, meta) * ConfigOptions.EfficiencyMultiplier;
-	}
 
 	@Override
 	public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side, float floatx, float floaty,

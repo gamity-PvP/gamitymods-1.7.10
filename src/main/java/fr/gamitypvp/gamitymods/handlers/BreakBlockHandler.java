@@ -2,6 +2,7 @@ package fr.gamitypvp.gamitymods.handlers;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import fr.gamitypvp.gamitymods.items.Items;
+import fr.gamitypvp.gamitymods.materials.chromium.Tools;
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -25,18 +26,15 @@ public class BreakBlockHandler {
         add(Item.getItemFromBlock(Block.getBlockById(581)));
         add(Item.getItemFromBlock(Block.getBlockById(582)));
         add(Item.getItemFromBlock(Block.getBlockById(583)));
-        // Ajoutez ici d'autres minerais que vous souhaitez traiter
     }};
 
     @SubscribeEvent
     public void onHarvestDrops(BlockEvent.HarvestDropsEvent event) {
-
-        // Vérifiez que le joueur utilise un ChromiumHammer avec Fortune 3
         if (event.harvester != null && event.harvester.getCurrentEquippedItem() != null) {
             List<ItemStack> newDrops = new ArrayList<>();
             ItemStack currentItem = event.harvester.getCurrentEquippedItem();
             int fortuneLevel = EnchantmentHelper.getEnchantmentLevel(Enchantment.fortune.effectId, currentItem);
-            if ((currentItem.getItem() == fr.gamitypvp.gamitymods.items.Items.ChromiumHammer || currentItem.getItem() == Items.PlatiumHammer) && fortuneLevel > 0) {
+            if ((currentItem.getItem() == Tools.chromiumHammer || currentItem.getItem() == fr.gamitypvp.gamitymods.materials.platium.Tools.platiumHammer) && fortuneLevel > 0) {
                 for (ItemStack drop : event.drops) {
                     ItemStack smeltingResult = FurnaceRecipes.smelting().getSmeltingResult(drop);
                     if (smeltingResult != null && oreBlocks.contains(drop.getItem())) {

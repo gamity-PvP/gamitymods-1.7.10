@@ -19,7 +19,7 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "0.2.0"
+version = "0.2.5"
 group = "fr.gamitypvp.gamitymods" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "gamitymods"
 targetCompatibility = sourceCompatibility = JavaVersion.VERSION_1_8
@@ -66,4 +66,6 @@ processResources {
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
     }
+}
+runClient {
 }

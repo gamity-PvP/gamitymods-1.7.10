@@ -32,7 +32,7 @@ public class placeholderBlockTab  extends CreativeTabs
     @Override
     public Item getTabIconItem()
     {
-        return Item.getItemFromBlock(Blocks.placeholderBlocks[0]);
+        return Item.getItemFromBlock(Blocks.placeholderBlocksView);
     }
 
 }

@@ -1,5 +1,6 @@
 package fr.gamitypvp.gamitymods.creativetabs;
 
+import fr.gamitypvp.gamitymods.materials.gamity.Tools;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import fr.gamitypvp.gamitymods.items.Items;
@@ -32,7 +33,7 @@ public class gamitymodsHammerTab extends CreativeTabs
 	@Override
 	public Item getTabIconItem()
 	{
-		return Items.GamityHammer;
+		return Tools.gamityHammer;
 	}
 
 }

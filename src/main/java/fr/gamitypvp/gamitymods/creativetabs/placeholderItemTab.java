@@ -32,7 +32,7 @@ public class placeholderItemTab extends CreativeTabs
     @Override
     public Item getTabIconItem()
     {
-        return Items.PlaceHolderItems[0];
+        return Items.PlaceHolderItemsView;
     }
 
 }
